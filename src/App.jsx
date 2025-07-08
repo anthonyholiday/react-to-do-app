@@ -3,7 +3,7 @@ import ToDoInput from "./components/toDoInput.jsx"
 import ToDoList from "./components/toDoList.jsx"
 
 function App() {
-  const [toDoList, setToDoList] = useState([
+  const [toDo, setToDo] = useState([
     {
         title: "this is an item",
         id: crypto.randomUUID()
@@ -15,11 +15,15 @@ function App() {
 ])
 
   function addToDo(title) {
-    setToDoList(prev => [
+    setToDo(prev => [
       ...prev,
       { title, id: crypto.randomUUID() }
     ]);
   }
+
+  function deleteToDo(id)   {
+    setToDo(prev => prev.filter(item => item.id !== id))
+}
 
   return (
       <main>
@@ -27,7 +31,7 @@ function App() {
           <div className="max-w-7xl">
             <div className="todo-app-wrapper flex flex-col items-center justify-items-stretch w-100% gap-8">
               <ToDoInput addToDo={addToDo} />
-              <ToDoList toDoList={toDoList} />
+              <ToDoList toDo={toDo} deleteToDo={deleteToDo} />
             </div>
           </div>
         </div>
