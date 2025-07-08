@@ -1,8 +1,11 @@
 import { useState } from 'react'
-import ToDoInput from "./components/todoInput.jsx"
+import ToDoInput from "./components/toDoInput.jsx"
 import ToDoList from "./components/toDoList.jsx"
+import Item from "./components/toDoItem.jsx"
 
 function App() {
+  const [toDos, setToDos] = useState("Hello this is state")
+
   return (
       <main>
         <div className="mx-40 py-80">

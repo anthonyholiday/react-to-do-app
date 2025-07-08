@@ -1,11 +1,10 @@
 import React from "react"
+import Item from "./toDoItem.jsx"
 
-export default function ToDoList()  {
+export default function ToDoList(props)  {
     return (
         <ul>
-            <li>
-                List goes here
-            </li>
+            <Item />
         </ul>
     )
 }
