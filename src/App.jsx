@@ -14,12 +14,19 @@ function App() {
     }
 ])
 
+  function addToDo(title) {
+    setToDoList(prev => [
+      ...prev,
+      { title, id: crypto.randomUUID() }
+    ]);
+  }
+
   return (
       <main>
         <div className="mx-40 py-80">
           <div className="max-w-7xl">
             <div className="todo-app-wrapper flex flex-col items-center justify-items-stretch w-100% gap-8">
-              <ToDoInput />
+              <ToDoInput addToDo={addToDo} />
               <ToDoList toDoList={toDoList} />
             </div>
           </div>

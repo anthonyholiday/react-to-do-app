@@ -5,7 +5,8 @@ export default function ToDoInput({ addToDo }) {
     const [inputValue, setInputValue] = React.useState("")
     const handleSubmit = (event) => {
         event.preventDefault()
-        console.log(inputValue)
+        addToDo(inputValue)
+        setInputValue("")
     }
     return (
         <form className="flex gap-8">
