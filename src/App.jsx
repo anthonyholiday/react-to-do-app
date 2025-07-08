@@ -1,10 +1,18 @@
 import { useState } from 'react'
 import ToDoInput from "./components/toDoInput.jsx"
 import ToDoList from "./components/toDoList.jsx"
-import Item from "./components/toDoItem.jsx"
 
 function App() {
-  const [toDos, setToDos] = useState("Hello this is state")
+  const [toDoList, setToDoList] = useState([
+    {
+        title: "this is an item",
+        id: crypto.randomUUID()
+    },
+    {
+        title: "this is another item #2",
+        id: crypto.randomUUID()
+    }
+])
 
   return (
       <main>
@@ -12,7 +20,7 @@ function App() {
           <div className="max-w-7xl">
             <div className="todo-app-wrapper flex flex-col items-center justify-items-stretch w-100% gap-8">
               <ToDoInput />
-              <ToDoList />
+              <ToDoList toDoList={toDoList} />
             </div>
           </div>
         </div>
