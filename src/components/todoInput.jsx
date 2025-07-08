@@ -1,5 +1,4 @@
 import React from "react"
-import ToDoList from "./toDoList.jsx"
 
 export default function ToDoInput({ addToDo }) {
     const [inputValue, setInputValue] = React.useState("")
