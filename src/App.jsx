@@ -1,18 +1,29 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import ToDoInput from "./components/toDoInput.jsx"
 import ToDoList from "./components/toDoList.jsx"
 
 function App() {
-  const [toDo, setToDo] = useState([
+  const [toDo, setToDo] = useState(() => {
+  const items = JSON.parse(localStorage.getItem("toDo"))
+  return items || 
+  [
     {
-        title: "this is an item",
-        id: crypto.randomUUID()
-    },
-    {
-        title: "this is another item #2",
-        id: crypto.randomUUID()
+      title: "Hello",
+      id: crypto.randomUUID()
     }
-])
+]
+})
+
+  useEffect(() => {
+    const items = JSON.parse(localStorage.getItem("toDo"))
+    if(items) {
+      setToDo(items)
+    }
+  }, [])
+
+  useEffect(() => {
+    localStorage.setItem("toDo", JSON.stringify(toDo))
+  },[toDo])
 
   function addToDo(title) {
     setToDo(prev => [
