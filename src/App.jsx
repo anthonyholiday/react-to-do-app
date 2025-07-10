@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import ToDoInput from "./components/toDoInput.jsx"
 import ToDoList from "./components/toDoList.jsx"
+import Image from './components/image.jsx'
 
 function App() {
   const [toDo, setToDo] = useState(() => {
@@ -40,7 +41,8 @@ function App() {
       <main>
         <div className="mx-40 py-80">
           <div className="max-w-7xl">
-            <div className="todo-app-wrapper flex flex-col items-center justify-items-stretch w-100% gap-8">
+            <div className="todo-app-wrapper flex flex-col items-center justify-items-stretch w-100% gap-8 bg-red-900">
+              <Image />
               <h1>Anthony's ToDo App</h1>
               <ToDoInput addToDo={addToDo} />
               <ToDoList toDo={toDo} deleteToDo={deleteToDo} />
