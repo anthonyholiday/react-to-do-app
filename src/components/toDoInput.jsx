@@ -8,7 +8,7 @@ export default function ToDoInput({ addToDo }) {
         setInputValue("")
     }
     return (
-        <form className="flex gap-8">
+        <form className="flex gap-8 w-100%">
             <input id="todo" type="text" value={inputValue} onChange={e => setInputValue(e.target.value)} className="bg-white text-black" />
             <button onClick={handleSubmit}>Add ToDo</button>
       </form>
