@@ -40,7 +40,7 @@ function App() {
   return (
       <main>
         <div className="mx-40 py-80">
-          <div className="max-w-7xl">
+          <div className="max-w-7xl mx-auto">
             <div className="todo-app-wrapper flex flex-col items-center justify-items-stretch w-100% gap-8 bg-red-900">
               <Image />
               <h1>Anthony's ToDo App</h1>
