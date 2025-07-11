@@ -15,6 +15,37 @@ function App() {
 ]
 })
 
+const images = [
+  {
+      emotion: "happy",
+      image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.mytalk1071.com%2Fwp-content%2Fuploads%2F2023%2F04%2FCMGfd59564a-9fcb-4bcf-8d21-cadda76e764b.jpg&f=1&nofb=1&ipt=2dbb6286c9cdd8d6786f6cf78dd74acaba52e872b346d070185a4b7a8b5e58f6"
+  },
+  {
+      emotion: "fine",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/USAFA_Hosts_Elon_Musk_%28Image_1_of_17%29_%28cropped%29.jpg/500px-USAFA_Hosts_Elon_Musk_%28Image_1_of_17%29_%28cropped%29.jpg"
+  },
+  {
+      emotion: "angry",
+      image: "https://images.squarespace-cdn.com/content/v1/520ed800e4b0229123208764/1630946885160-6GGYPZO3JO1W7G7183WP/ja_headshot.jpeg?format=1500w"
+  },
+  {
+      emotion: "sad",
+      image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.mytalk1071.com%2Fwp-content%2Fuploads%2F2023%2F04%2FCMGfd59564a-9fcb-4bcf-8d21-cadda76e764b.jpg&f=1&nofb=1&ipt=2dbb6286c9cdd8d6786f6cf78dd74acaba52e872b346d070185a4b7a8b5e58f6"
+  }
+]
+
+let selectedImage = ""
+
+if (toDo.length <= 2) {
+  selectedImage = images[0].image
+} else if (toDo.length <= 5) {
+  selectedImage = images[1].image
+} else if (toDo.length <= 7) {
+  selectedImage = images[2].image
+} else  {
+  selectedImage = images[3].image
+}
+
   useEffect(() => {
     const items = JSON.parse(localStorage.getItem("toDo"))
     if(items) {
@@ -27,22 +58,27 @@ function App() {
   },[toDo])
 
   function addToDo(title) {
-    setToDo(prev => [
-      ...prev,
-      { title, id: crypto.randomUUID() }
-    ]);
+    if (!title) {
+      alert("Please enter something you'd like to remember to do.")
+    } else  {
+      setToDo(prev => [
+        ...prev,
+        { title, id: crypto.randomUUID() }
+      ]);
+    }
   }
 
   function deleteToDo(id)   {
     setToDo(prev => prev.filter(item => item.id !== id))
-}
+  }
+  
 
   return (
       <main>
         <div className="mx-40 py-80">
           <div className="max-w-7xl mx-auto">
-            <div className="todo-app-wrapper flex flex-col items-center justify-items-stretch w-100% gap-8 bg-red-900">
-              <Image />
+            <div className="todo-app-wrapper flex flex-col items-center justify-items-stretch w-100% gap-8 bg-blue-900">
+              <Image image={selectedImage}/>
               <h1>Anthony's ToDo App</h1>
               <ToDoInput addToDo={addToDo} />
               <ToDoList toDo={toDo} deleteToDo={deleteToDo} />
