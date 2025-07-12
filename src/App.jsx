@@ -9,7 +9,7 @@ function App() {
   return items || 
   [
     {
-      title: "Hello",
+      title: "Hello, this will be a to do card.",
       id: crypto.randomUUID()
     }
 ]
@@ -60,10 +60,12 @@ if (toDo.length <= 2) {
   function addToDo(title) {
     if (!title) {
       alert("Please enter something you'd like to remember to do.")
-    } else  {
+    } else {
       setToDo(prev => [
         ...prev,
-        { title, id: crypto.randomUUID() }
+        {
+          title, id: crypto.randomUUID()
+        }
       ]);
     }
   }
