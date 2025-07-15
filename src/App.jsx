@@ -79,7 +79,7 @@ if (toDo.length <= 2) {
       <main>
         <div className="mx-8 pt-20 lg:mx-40 lg:pt-40">
           <div className="max-w-2xl mx-auto">
-            <div className="todo-app-wrapper bg-[#242424] flex flex-col items-center justify-items-stretch w-100% gap-6 lg:gap-8 border rounded rounded-xl border-slate-400 p-6 lg:p-12">
+            <div className="todo-app-wrapper bg-[#242424] flex flex-col items-center justify-items-stretch w-100% gap-6 lg:gap-8 border rounded rounded-xl border-slate-700 p-6 lg:p-12">
               <Image image={selectedImage}/>
               <h1 className="text-center text-3xl lg:text-6xl">Anthony's ToDo App</h1>
               <ToDoInput addToDo={addToDo} />
