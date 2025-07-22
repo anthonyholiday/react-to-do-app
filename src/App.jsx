@@ -19,19 +19,31 @@ function App() {
 const images = [
   {
       emotion: "happy",
-      image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.mytalk1071.com%2Fwp-content%2Fuploads%2F2023%2F04%2FCMGfd59564a-9fcb-4bcf-8d21-cadda76e764b.jpg&f=1&nofb=1&ipt=2dbb6286c9cdd8d6786f6cf78dd74acaba52e872b346d070185a4b7a8b5e58f6"
+      image: "/src/assets/happy.jpeg"
   },
   {
-      emotion: "fine",
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/USAFA_Hosts_Elon_Musk_%28Image_1_of_17%29_%28cropped%29.jpg/500px-USAFA_Hosts_Elon_Musk_%28Image_1_of_17%29_%28cropped%29.jpg"
+      emotion: "ok",
+      image: "/src/assets/ok.jpeg"
   },
   {
-      emotion: "angry",
-      image: "https://images.squarespace-cdn.com/content/v1/520ed800e4b0229123208764/1630946885160-6GGYPZO3JO1W7G7183WP/ja_headshot.jpeg?format=1500w"
+      emotion: "so-so",
+      image: "/src/assets/so-so.jpeg"
   },
   {
-      emotion: "sad",
-      image: "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.mytalk1071.com%2Fwp-content%2Fuploads%2F2023%2F04%2FCMGfd59564a-9fcb-4bcf-8d21-cadda76e764b.jpg&f=1&nofb=1&ipt=2dbb6286c9cdd8d6786f6cf78dd74acaba52e872b346d070185a4b7a8b5e58f6"
+      emotion: "hairy",
+      image: "/src/assets/hairy.jpeg"
+  },
+  {
+      emotion: "stressed",
+      image: "/src/assets/stressed.jpeg"
+  },
+  {
+      emotion: "insane",
+      image: "/src/assets/insane.jpeg"
+  },
+  {
+      emotion: "dead",
+      image: "/src/assets/dead.jpeg"
   }
 ]
 
@@ -43,8 +55,14 @@ if (toDo.length <= 2) {
   selectedImage = images[1].image
 } else if (toDo.length <= 7) {
   selectedImage = images[2].image
-} else  {
+} else if (toDo.length <= 10) {
   selectedImage = images[3].image
+} else if (toDo.length <= 12) {
+  selectedImage = images[4].image
+} else if (toDo.length <= 15) {
+  selectedImage = images[5].image
+} else {
+  selectedImage = images[6].image
 }
 
   useEffect(() => {
