@@ -35,7 +35,7 @@ const images = [
   },
   {
       emotion: "stressed",
-      image: "/src/assets/stressed.jpeg"
+      image: "/src/assets/stressed.jpg"
   },
   {
       emotion: "insane",
@@ -49,7 +49,7 @@ const images = [
 
 let selectedImage = ""
 
-if (toDo.length <= 2) {
+if (toDo.length === 0) {
   selectedImage = images[0].image
 } else if (toDo.length <= 5) {
   selectedImage = images[1].image
@@ -96,7 +96,7 @@ if (toDo.length <= 2) {
 
   return (
       <main>
-        <Tag classes={"bg-slate-800 text-white px-2 py-1 rounded absolute bottom-4 right-4 flex flow-row justify-normal gap-2 ease-in transition duration-150 hover:-translate-y-1"}/>
+        <Tag classes={"bg-slate-800 text-white px-2 py-1 rounded fixed bottom-4 right-4 flex flow-row justify-normal gap-2 ease-in transition duration-150 hover:-translate-y-1"}/>
         <div className="mx-8 pt-20 lg:mx-40 lg:pt-40">
           <div className="max-w-2xl mx-auto">
             <div className="todo-app-wrapper bg-slate-900 flex flex-col items-center justify-items-stretch w-100% gap-6 shadow-lg lg:gap-8 border rounded rounded-xl border-slate-700 p-6 lg:p-12 transition ease-in duration-200 hover:border-slate-600">
