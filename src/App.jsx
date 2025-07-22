@@ -19,31 +19,31 @@ function App() {
 const images = [
   {
       emotion: "happy",
-      image: "/src/assets/happy.jpeg"
+      image: "/happy.jpeg"
   },
   {
       emotion: "ok",
-      image: "/src/assets/ok.jpeg"
+      image: "/ok.jpeg"
   },
   {
       emotion: "so-so",
-      image: "/src/assets/so-so.jpeg"
+      image: "/so-so.jpeg"
   },
   {
       emotion: "hairy",
-      image: "/src/assets/hairy.jpeg"
+      image: "/hairy.jpeg"
   },
   {
       emotion: "stressed",
-      image: "/src/assets/stressed.jpg"
+      image: "/stressed.jpg"
   },
   {
       emotion: "insane",
-      image: "/src/assets/insane.jpeg"
+      image: "/insane.jpeg"
   },
   {
       emotion: "dead",
-      image: "/src/assets/dead.jpeg"
+      image: "/dead.jpeg"
   }
 ]
 
