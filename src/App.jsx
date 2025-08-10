@@ -101,7 +101,7 @@ if (toDo.length === 0) {
           <div className="max-w-2xl mx-auto">
             <div className="todo-app-wrapper bg-slate-900 flex flex-col items-center justify-items-stretch w-100% gap-6 shadow-md lg:gap-8 border rounded rounded-xl border-slate-700 p-6 lg:py-12 lg:px-16 transition ease-in duration-200 hover:border-slate-600">
               <Image image={selectedImage}/>
-              <h1 className="text-center text-2xl lg:text-6xl">Anthony's ToDo App</h1>
+              <h1 className="text-center text-3xl lg:text-6xl">Anthony's ToDo App</h1>
               <ToDoInput addToDo={addToDo} />
               <ToDoList toDo={toDo} deleteToDo={deleteToDo} />
             </div>
